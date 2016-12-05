@@ -157,6 +157,7 @@ exports.editUser = function(req, res) {
     }
 
     var errors = req.validationErrors();
+    
 
     // Return error if validation error
     if (errors) {
@@ -182,11 +183,13 @@ exports.editUser = function(req, res) {
                     var userData = req.body;
                     userData['username'] = req.session.username;
 
-                    console.log(req.body.password);
+                    
 
-                    if (req.body.password == null) {
+                    if (req.body.password == null ||
+                    req.body.password == '' ) {
                         userData['password'] = foundUser.password;
                     }
+                    
 
                     // Create a new user with the updated information
                     var newUser = new User(userData);
