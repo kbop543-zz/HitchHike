@@ -1,0 +1,85 @@
+body { 
+	font-family: sans-serif;
+	background: #333;
+}
+
+.card-container {
+    height: 100%;
+}
+
+.content {
+    padding-top: 75px;
+    height: 84%;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Container:hover
+{
+    overflow-y: auto;
+}
+form { 
+	padding: 3px;
+	position: fixed; 
+	bottom: 0; 
+	width: 100%; 
+}
+
+form input {
+	color: #F64747;
+	padding: 10px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    background: rgba(128,128,128, 0.2);
+}
+
+form #messageSubmit { 
+	color: white;
+    width: 8%;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    background: #fe503e; 
+}
+
+form #messageSubmit:hover {
+	cursor: hand;
+}
+
+#messages { 
+	list-style-type: none; 
+	margin: 0; 
+}
+
+#messages li {
+	color: white;
+	padding: 5px 10px; 
+}
+
+#messages li:nth-child(odd) { 
+	background: rgba(128,128,128, 0.2); 
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    outline: 1px solid slategrey;
+}

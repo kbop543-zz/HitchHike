@@ -1,0 +1,57 @@
+body {
+    font-family: sans-serif;
+    background: #333;
+}
+
+.card-container {
+    margin: auto;
+}
+
+.content {
+    padding-top: 75px;
+    height: 89%;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.card {
+    text-align: center;
+    margin: auto;
+    width: 420px;
+    padding: 30px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.editUser-field, .control-panel, .driver-info {
+	margin: 8px;
+	padding: 5px;
+	width: 200px;
+	border: none;
+	border-radius: 5px;
+	background: rgba(128,128,128,0.2);
+}
+
+.userCard{
+    padding:20px;
+}
+
+button {
+    font-size: 22px;
+    width: 250px;
+}
+
+button[type=submit] {
+	font-size: 12px;
+	width: 200px;
+	padding: 5px;
+}
+
+#addUserForm, #updateUserForm, #deleteUserForm, #findUserForUpdate{
+    display: none;
+}

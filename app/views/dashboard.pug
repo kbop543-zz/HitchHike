@@ -1,0 +1,57 @@
+include mixins/hikecard
+include mixins/nav
+
+head
+    title #{title}
+
+    link(rel='stylesheet', href='/assets/css/global.css')
+    link(rel='stylesheet' href='/assets/css/reset.css')
+    link(rel='stylesheet' href='/assets/css/dashboard.css')
+    link(rel='stylesheet' href='/assets/css/nav.css')
+    link(rel='stylesheet' href='/assets/css/hikecard.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(src='/assets/scripts/dashboard.js' type='text/javascript')
+body
+    +navbar()
+
+    div(class='content')
+        div(class='container')
+            div(class='card-list')
+                div(style='display: flex;')
+                    input(id='search-bar' value='' type='text' placeholder='Search for a destination')
+                    button(value='Search' id='searchHikesButton', class='search-button') Search
+                    button(value='Reset' id='resetSearchButton', class='search-button') Reset
+                div(style='display: flex; margin-bottom: 10px;')
+                    button(value='Sort By Price' id='sortByPriceButton', class='sort-button') Sort By Price
+                    button(value='Sort By Origin' id='sortByOriginButton', class='sort-button') Sort By Origin
+                    button(value='Sort By Destination' id='sortByDestinationButton', class='sort-button') Sort By Destination
+                    button(value='Show My Hikes' id='myHikesButton', class='my-hikes-button') MyHikes
+
+                each hike in hikes
+                    +hikecard(hike, username, admin)
+
+            div(class='create-card')
+            form(id='createHikeForm' name='createHike')
+                    p Create A New Hike 
+                    label(for="originLabel" class ="label" ) Origin:
+                    input(class='create-hike-field' type='text' placeholder='Origin' name='origin', required)
+                    br
+                    label(for="destinationLabel" class ="label" ) Destination:
+                    input(class='create-hike-field' type='text' placeholder='Destination' name='destination', required)
+                    br
+                    label(for="departureDateLabel" class ="label" ) Departure Date:
+                    input(class='create-hike-field' type='text' placeholder='MM-DD-YYYY' name='departureDate'  required)
+                    br
+                    label(for="arrivalDateLabel" class ="label" ) Arrival Date:
+                    input(class='create-hike-field' type='text' placeholder='MM-DD-YYYY' name='arrivalDate'  required)
+                    br
+                    label(for="capacityLabel" class ="label" ) Capacity:
+                    input(class='create-hike-field' type='Number' placeholder='Capacity' name='capacity', required,pattern='\d*')
+                    br
+                    label(for="priceLabel" class ="label" ) Price:
+                    input(class='create-hike-field' type='Number' placeholder='Price' name='price', required,pattern='\d*')
+                    br
+                    button(id='createHikeButton' class='create-hike-button' type='submit') Create
+            
+            if (driver == 1)
+                button(id='createACarpoolButton', class='createACarpool') +

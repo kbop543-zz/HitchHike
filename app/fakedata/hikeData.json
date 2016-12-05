@@ -1,0 +1,22 @@
+[
+	{
+		"origin": "Kitchener",
+		"destination": "Toronto",
+		"departureDate": "<2016-11-29T09:30:00>",
+		"arrivalDate": "<2016-11-29T11:30:00>",
+		"driver": "kelvin",
+		"id": "abc123",
+		"capacity": 2,
+		"size": 4
+	},
+	{
+		"origin": "Toronto",
+		"destination": "Kitchener",
+		"departureDate": "<2016-11-30T10:30:00>",
+		"arrivalDate": "<2016-11-30T12:30:00>",
+		"driver": "kelvin",
+		"id": "abc123",
+		"capacity": 2,
+		"size": 4
+	}
+]

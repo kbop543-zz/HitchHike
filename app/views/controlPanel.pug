@@ -1,0 +1,59 @@
+include mixins/nav
+include mixins/usercard
+
+head
+    title #{title}
+
+    link(rel='stylesheet', href='/assets/css/global.css')
+    link(rel='stylesheet' href='/assets/css/reset.css')
+    link(rel='stylesheet' href='/assets/css/dashboard.css')
+    link(rel='stylesheet' href='/assets/css/nav.css')
+    link(rel='stylesheet' href='/assets/css/controlPanel.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(src='/assets/scripts/controlPanel.js' type='text/javascript')
+body
+    +navbar()
+    div(class='content')
+        div(class='container')
+            div(class='card-container')
+                br
+                br
+                br
+                br
+                div(class='card')
+                    button(id='listUser') List All Users
+                    br
+                    div(class='user-card-list')
+                        each user in users
+                            +usercard(user)
+
+                    button(id='addUser') Add User
+
+                    form(id='addUserForm' name='addUser')
+                        input(class='control-panel' type='text' placeholder='USERNAME' name='username', required, pattern='[A-Za-z0-9_]{3,20}',title='Needs to be 3-20 characters and Alphanumeric') 
+                        br
+                        input(class='control-panel' type='password' placeholder='PASSWORD' name='password', required, pattern='[A-Za-z0-9_]{3,20}' title='Needs to be 3-20 characters and Alphanumeric')
+                        br
+                        input(class='control-panel' type='text' placeholder='FIRST NAME' name='firstName', required, pattern='^[A-z]+$' title='Alphabetic letters only')
+                        br
+                        input(class='control-panel' type='text' placeholder='LAST NAME' name='lastName', required, pattern='^[A-z]+$' title='Alphabetic letters only')
+                        br
+                        input(class='control-panel' type='email' placeholder='EMAIL' name='email',required)
+                        br  
+                        input(id='licensePlate' class='driver-info' type='text' placeholder='LICENSE PLATE' name='licensePlate',pattern='[A-Za-z0-9_]{3,20}',title='Needs to be 3-20 characters and Alphanumeric')
+                        br
+                        input(id='carModel' class='driver-info' type='text' placeholder='CAR MODEL' name='carModel',pattern='[A-Za-z0-9_]{3,20}',title='Needs to be 3-20 characters and Alphanumeric')
+                        br          
+                        button(type='submit') Create Account
+                        br
+
+                    button(id='deleteUser') Delete User
+                    form(id='deleteUserForm' name='deleteUser')
+                        input(id='deleteUsername' class='control-panel' type='text' placeholder='USERNAME' name='username',required,pattern='[A-Za-z0-9_]{3,20}',title='Needs to be 3-20 characters and Alphanumeric')
+                        br
+                        button( type='submit') Delete Account
+                        br
+
+                    button(id='initDatabase') Initialize Database
+                    br
+                    button(id='resetDatabase') Reset Database

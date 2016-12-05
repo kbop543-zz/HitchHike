@@ -1,0 +1,26 @@
+include mixins/drivercard
+include mixins/profileRideCard
+include mixins/nav
+
+head
+    title #{title}
+
+    link(rel='stylesheet', href='/assets/css/global.css')
+    link(rel='stylesheet' href='/assets/css/reset.css')
+    link(rel='stylesheet' href='/assets/css/dashboard.css')
+    link(rel='stylesheet' href='/assets/css/nav.css')
+    link(rel='stylesheet' href='/assets/css/hikecard.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(src='/assets/scripts/driverProfiles.js' type='text/javascript')
+
+body
+    +navbar()
+    div(class='content')
+        div(class='container')
+            div(class='card-list')
+                br
+                br
+                br
+                br
+                each driver in drivers
+                    +drivercard(driver)

@@ -1,0 +1,22 @@
+include mixins/nav
+
+head
+    title #{title}
+
+    link(rel='stylesheet' href='/assets/css/global.css')
+    link(rel='stylesheet' href='/assets/css/reset.css')
+    link(rel='stylesheet' href='/assets/css/nav.css')
+    link(rel='stylesheet', href='/assets/css/message.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(src="/socket.io/socket.io.js")
+    script(src='/assets/scripts/messenger.js' type='text/javascript')
+
+body
+    +navbar()
+    form(id="messageInput" name='signup')
+        input(id='m')
+        input(id='messageSubmit' type='submit' value="Send")
+    div(class='content')
+        div(class='container')
+            div(class='card-container')
+                ul(id='messages')

@@ -1,0 +1,50 @@
+ 1. A paragraph or two describing the topic of your application. 
+ What is the overall purpose of your application? Who does it serve? 
+ Explain at a high level what users will be able to do using your application.
+
+    Our application will modernize the age-old mode of transportation: hitchhiking. 
+    It is a carpool application (called HitchHike) that will allow clients to find 
+    or create a carpool ride by specifying a date, origin, and destination. The
+    results can be filtered or sorted by price, or rating. Drivers can specify a 
+    maximum number of seats, as well as a price.
+
+    Users will be asked to create an account that will allow them to search and join 
+    an existing carpool, join a waitlist if the group is already full, or create and 
+    post their own carpool group (by entering their vehicle, license, and car model). 
+    Users can also update their own profile, and message other users that are using 
+    the application. These carpool groups can be either private or public, which allows
+    Schools and teams to use the system to set up carpools for events. After a carpool 
+    ride, users can rate the carpool service, which can be seen by other users on the 
+    driver's profile. 
+
+    Admins are able to message users, but cannot join a carpool or make their own 
+    carpool groups. Admin privileges include viewing and editing currently registered 
+    users, and groups. They can also update, add, and delete user information. 
+    Lastly, admins are allowed to intialize and repopulate the database.
+
+2. Client Interactions:
+    - Create account/profile        (Post)
+    - Update account/profile        (Put)
+    - Delete account/profile        (Delete)
+    - Search for a carpool          (Get)
+    - Join a carpool                (Post)
+    - Join a waitlist of a carpool  (Post)
+    - Create a carpool              (Post)
+    - Create a private carpool      (Post)
+    - Delete a carpool              (Delete)
+    - Rate a driver                 (Post)
+    - Message other users           (Put)
+
+   Admin Interactions:
+    - Message a user                (Put)
+    - List users                    (Get)
+    - Add users                     (Post)
+    - Edit user information         (Put)
+    - Delete users                  (Delete)
+    - Delete posts                  (Delete)
+    - Initialize database           (Post)
+    - Edit database                 (Put)
+
+    Data will be stored in a MongoDB instance. 
+    There will be user, carpool, and message databases
+    

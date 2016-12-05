@@ -1,0 +1,30 @@
+[
+	{
+		"username": "philip",
+		"password": "p",
+		"firstName": "philip",
+		"lastName": "liu",
+		"email": "philip.okay@gmail.com"
+	},
+	{
+		"username": "kelvin",
+		"password": "k",
+		"firstName": "kelvin",
+		"lastName": "lai",
+		"driver": 1,
+		"licensePlate": "DOULIFT"
+	},
+	{
+		"username": "kyra",
+		"password": "k",
+		"firstName": "kyra",
+		"lastName": "stephen"
+	},
+	{
+		"username": "miranda",
+		"password": "m",
+		"firstName": "miranda",
+		"lastName": "le",
+		"email": "random-ly@hotmail.com"
+	}
+]
